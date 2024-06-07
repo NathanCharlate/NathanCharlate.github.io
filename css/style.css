@@ -1,50 +1,111 @@
-/* body {
-    display: flex;
-    margin: 0 1em;
-    height: 100vh;
-    flex-direction: column-reverse;
+@font-face {
+    font-family: "Roboto";
+    src: url(/font/Roboto-Black.ttf);
+    font-weight: normal;
+    font-style: normal;
+}
+
+body {
+    margin: 0;
+    font-family: "Roboto";
+}
+
+h2 {
+    font-size: 2em;
+    margin: 1em 2em;
+    border-bottom: 0.3em solid yellow;
+    display: inline-block;
 }
 
 .header {
+    height: 9vh;
+    background-color: black;
+    padding: 1em;
     display: flex;
-    width: 100%;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: space-evenly;
+    justify-content: space-between;
+    align-items: center;
+    .header-logo-img {
+        position: relative;
+        left: -45%;
+        top: -10%;
+        width: 120px;
+    }
+    .header-logo {
+        height: 64px;
+        width: 64px;
+        border-radius: 32px;
+        overflow: hidden;
+    }
+    .header-burger {
+        height: 50px;
+    }
 }
 
-.main {
-    display: flex;
-    width: 100%;
+.hall {
+    height: calc(100vh - 9vh);
+    background-image: url(/images/schnitzel.webp);
+    opacity: 0.65;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    .hall-intro {
+        font-size: 2em;
+        padding: 6em 1em;
+        color: white;
+    }
 }
 
-.header__div, .main__div {
+.content {
+    font-size: 1.2em;
+    margin: 1em;
+}
+
+.about {
     display: flex;
     flex-direction: column;
-    justify-content: space-evenly;
+    .about-img {
+        width: 80%;
+        margin: auto;
+        margin-bottom: 2em;
+    }
 }
 
-.header__div {
-    width: 50%;
-}
+.career {
+    .career-odd,
+    .career-even {
+        display: flex;
+        flex-direction: column;
+    }
 
-.header__pic--img {
-    height: 100%;
-    width: 100%;
-}
+    .career-div {
+        display: flex;
+        flex-direction: column;
+    }
+    .career-title {
+        font-size: 1.5em;
+        margin-left: 1.5rem;
+        margin-bottom: 0.5rem;
+    }
+    .career-society {
+        color: #666;
+        margin-left: 1.5rem;
+    }
+    .career-date {
+        color: #666;
+        margin-left: 1.5rem;
+        font-size: 0.8em;
+    }
 
-h1 {
-    font-size: 2rem;
-    font-weight: bold;
-    margin: 0.5em;
+    .career-img {
+        height: 200px;
+        width: 60%;
+        margin: auto;
+        margin-bottom: 2rem;
+    }
+    .career-img::after {
+        content: "";
+        margin: 1rem 0;
+        border: 10px solid #666;
+    }
 }
-
-.header__p {
-    line-height: 1.3rem;
-}
-
-.header__icon {
-    height: 2rem;
-    width: 2rem;
-    margin: 1rem;
-} */
