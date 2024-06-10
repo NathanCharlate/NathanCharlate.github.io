@@ -1,6 +1,6 @@
 @font-face {
     font-family: "Roboto";
-    src: url(/font/Roboto-Black.ttf);
+    src: url(/font/Roboto-Regular.ttf);
     font-weight: normal;
     font-style: normal;
 }
@@ -11,11 +11,14 @@ body {
 }
 
 h2 {
+    font-weight: 700;
     font-size: 2em;
-    margin: 1em 2em;
-    border-bottom: 0.3em solid yellow;
     display: inline-block;
 }
+
+/*//////////////////////// 
+HEADER
+////////////////////////*/
 
 .header {
     height: 9vh;
@@ -41,6 +44,10 @@ h2 {
     }
 }
 
+/*//////////////////////// 
+HALL
+////////////////////////*/
+
 .hall {
     height: calc(100vh - 9vh);
     background-image: url(/images/schnitzel.webp);
@@ -50,6 +57,7 @@ h2 {
     background-repeat: no-repeat;
     background-size: cover;
     .hall-intro {
+        font-weight: 900;
         font-size: 2em;
         padding: 6em 1em;
         color: white;
@@ -61,9 +69,21 @@ h2 {
     margin: 1em;
 }
 
+/*//////////////////////// 
+ABOUT
+////////////////////////*/
+
 .about {
-    display: flex;
-    flex-direction: column;
+    h2 {
+        margin: 1rem auto;
+    }
+    .about-div {
+        margin: auto;
+        display: flex;
+        flex-direction: column;
+        width: 90%;
+        margin-bottom: 2rem;
+    }
     .about-img {
         width: 80%;
         margin: auto;
@@ -71,41 +91,129 @@ h2 {
     }
 }
 
-.career {
-    .career-odd,
-    .career-even {
-        display: flex;
-        flex-direction: column;
-    }
+/*//////////////////////// 
+CAREER
+////////////////////////*/
 
+.career {
+    .career-header {
+        display: flex;
+        background-image: url("/images/hardware.png");
+        background-position: center;
+        background-size: cover;
+        margin-bottom: 2rem;
+        height: 200px;
+        h2 {
+            border: none;
+            color: #fff;
+            font-size: 2.5rem;
+            text-shadow: 2px 2px 2px aqua;
+            margin: auto;
+        }
+    }
     .career-div {
+        margin: auto;
         display: flex;
         flex-direction: column;
+        width: 90%;
+        margin-bottom: 2rem;
+        border-bottom: 1px solid #666;
     }
     .career-title {
+        font-weight: 900;
         font-size: 1.5em;
-        margin-left: 1.5rem;
         margin-bottom: 0.5rem;
     }
     .career-society {
         color: #666;
-        margin-left: 1.5rem;
     }
     .career-date {
         color: #666;
-        margin-left: 1.5rem;
         font-size: 0.8em;
     }
 
     .career-img {
         height: 200px;
-        width: 60%;
         margin: auto;
         margin-bottom: 2rem;
     }
-    .career-img::after {
+}
+
+/*//////////////////////// 
+EXPERIENCE
+////////////////////////*/
+
+.experience {
+    background-image: url(/images/space.webp);
+    background-attachment: fixed;
+    background-position: center;
+    color: #fff;
+    padding-bottom: 1em;
+    .experience-header {
+        display: flex;
+        height: 10rem;
+        h2 {
+            transform: perspective(500px) rotateX(60deg) scaleY(2.5);
+            color: #ebd71c;
+            margin: auto;
+            font-size: 2.5rem;
+        }
+    }
+    .experience-container {
+        width: 90%;
+        margin: auto;
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 2rem;
+        box-shadow: 0px 0px 10px #ebd71c;
+        border-radius: 2rem;
+        h2 {
+            font-size: 3rem;
+            margin: 3rem auto 1rem;
+            text-shadow: 0px 0px 5px red;
+        }
+    }
+
+    .experience-card {
+        display: flex;
+        flex-direction: column;
+        margin: 1rem;
+        h3 {
+            text-transform: uppercase;
+            margin: 2rem 0.5rem;
+            font-size: 2rem;
+        }
+
+        h4 {
+            font-size: 1.5rem;
+        }
+        p {
+            margin: 1rem 0;
+        }
+        img {
+            width: 60px;
+            margin: 1rem auto 2rem;
+        }
+    }
+    .experience-card::after {
+        margin: 1rem auto;
         content: "";
-        margin: 1rem 0;
-        border: 10px solid #666;
+        width: 40px;
+        height: 0;
+        border: 5px solid #ebd71c;
+    }
+}
+
+/*//////////////////////// 
+CONTACT
+////////////////////////*/
+
+.contact {
+    display: flex;
+    h2 {
+        margin: 2rem auto;
+    }
+    .contact-container {
+        display: flex;
     }
 }
