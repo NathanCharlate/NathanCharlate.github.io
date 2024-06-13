@@ -17,31 +17,73 @@ h2 {
 }
 
 /*//////////////////////// 
-HEADER
+TOP
 ////////////////////////*/
 
-.header {
-    height: 9vh;
-    background-color: black;
-    padding: 1em;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    .header-logo-img {
+.top {
+    height: fit-content;
+    background-image: url("/images/data-center.webp");
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.logo {
+    z-index: 2;
+    position: fixed;
+    top: 16px;
+    left: 16px;
+    height: 64px;
+    width: 64px;
+    border-radius: 32px;
+    overflow: hidden;
+    transition: transform 0.5s ease, opacity 0.5s ease;
+    .logo-img {
         position: relative;
         left: -45%;
         top: -10%;
         width: 120px;
     }
-    .header-logo {
-        height: 64px;
-        width: 64px;
-        border-radius: 32px;
-        overflow: hidden;
+}
+/* .burger {
+    z-index: 2;
+    height: 50px;
+    position: fixed;
+    top: 24px;
+    right: 16px;
+} */
+.links {
+    position: fixed;
+    right: 0;
+    top: -320px;
+    display: flex;
+    flex-direction: column;
+    transform: translateY(0);
+    transition: transform 0.5s ease;
+    div {
+        border: none;
+        padding: 2em;
+        width: 100%;
+        background-color: rgb(255, 255, 255, 0.7);
     }
-    .header-burger {
+    div:hover {
+        background-color: rgb(221, 221, 221, 0.7);
+    }
+    .burger {
         height: 50px;
+        align-self: end;
+        padding-right: 16px;
+        padding-top: 16px;
+        transition: transform 0.5s ease, opacity 0.5s ease;
     }
+}
+.display {
+    transform: translateY(320px);
+}
+
+.shrink {
+    opacity: 0.5;
+    transform: scale(0.8);
 }
 
 /*//////////////////////// 
@@ -49,18 +91,16 @@ HALL
 ////////////////////////*/
 
 .hall {
-    height: calc(100vh - 9vh);
-    background-image: url(/images/schnitzel.webp);
-    opacity: 0.65;
-    background-attachment: fixed;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
+    height: 100vh;
     .hall-intro {
+        position: absolute;
+        top: 40vh;
+        left: 5vw;
         font-weight: 900;
         font-size: 2em;
-        padding: 6em 1em;
         color: white;
+        translate: 0 20px;
+        transition: translate 1s ease-out;
     }
 }
 
@@ -74,20 +114,32 @@ ABOUT
 ////////////////////////*/
 
 .about {
-    h2 {
-        margin: 1rem auto;
+    color: #fff;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+    height: 100vh;
+    .about-right {
+        padding: 1em 5em 1em 1em;
+        margin-bottom: 3rem;
+        background-color: rgb(255, 255, 255, 0.2);
+        h2 {
+            margin: 1rem;
+        }
+        p {
+            margin: 1rem;
+        }
     }
-    .about-div {
-        margin: auto;
-        display: flex;
-        flex-direction: column;
-        width: 90%;
-        margin-bottom: 2rem;
-    }
-    .about-img {
-        width: 80%;
-        margin: auto;
-        margin-bottom: 2em;
+    .about-left {
+        padding: 1em;
+        background-color: rgb(255, 255, 255, 0.2);
+        margin-bottom: 3rem;
+        .about-img {
+            width: 80%;
+            margin: auto;
+            display: block;
+        }
     }
 }
 
@@ -96,28 +148,25 @@ CAREER
 ////////////////////////*/
 
 .career {
+    color: #fff;
     .career-header {
         display: flex;
-        background-image: url("/images/hardware.png");
-        background-position: center;
-        background-size: cover;
-        margin-bottom: 2rem;
-        height: 200px;
         h2 {
-            border: none;
-            color: #fff;
-            font-size: 2.5rem;
-            text-shadow: 2px 2px 2px aqua;
+            padding: 4rem 0 3rem;
+            transform: perspective(500px) rotateX(60deg) scaleY(2.5);
             margin: auto;
+            font-size: 2.5rem;
         }
     }
     .career-div {
         margin: auto;
         display: flex;
         flex-direction: column;
-        width: 90%;
+        width: 80%;
+        padding: 1rem;
         margin-bottom: 2rem;
-        border-bottom: 1px solid #666;
+        box-shadow: 0px 0px 10px #fff;
+        border-radius: 2rem;
     }
     .career-title {
         font-weight: 900;
@@ -144,17 +193,15 @@ EXPERIENCE
 ////////////////////////*/
 
 .experience {
-    background-image: url(/images/space.webp);
-    background-attachment: fixed;
-    background-position: center;
     color: #fff;
     padding-bottom: 1em;
     .experience-header {
         display: flex;
         height: 10rem;
         h2 {
+            padding: 4rem 0 3rem;
             transform: perspective(500px) rotateX(60deg) scaleY(2.5);
-            color: #ebd71c;
+            color: #fff;
             margin: auto;
             font-size: 2.5rem;
         }
@@ -165,12 +212,12 @@ EXPERIENCE
         display: flex;
         flex-direction: column;
         margin-bottom: 2rem;
-        box-shadow: 0px 0px 10px #ebd71c;
+        box-shadow: 0px 0px 10px #fff;
         border-radius: 2rem;
         h2 {
             font-size: 3rem;
             margin: 3rem auto 1rem;
-            text-shadow: 0px 0px 5px red;
+            text-shadow: 0px 0px 5px lightblue;
         }
     }
 
@@ -194,13 +241,16 @@ EXPERIENCE
             width: 60px;
             margin: 1rem auto 2rem;
         }
+        .icon-group {
+            display: flex;
+        }
     }
     .experience-card::after {
         margin: 1rem auto;
         content: "";
         width: 40px;
         height: 0;
-        border: 5px solid #ebd71c;
+        border: 5px solid lightblue;
     }
 }
 
@@ -209,11 +259,33 @@ CONTACT
 ////////////////////////*/
 
 .contact {
+    color: #fff;
     display: flex;
+    flex-direction: column;
+    padding-bottom: 1rem;
     h2 {
-        margin: 2rem auto;
+        margin: 1rem auto;
     }
     .contact-container {
+        margin: auto;
         display: flex;
+        flex-direction: row;
+        align-items: center;
+        img {
+            width: 60px;
+        }
+    }
+}
+
+/*//////////////////////// 
+FOOTER
+////////////////////////*/
+
+footer {
+    height: 100px;
+    background-color: #4d4d4d;
+    display: flex;
+    span {
+        margin: auto;
     }
 }
