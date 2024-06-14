@@ -20,14 +20,6 @@ h2 {
 TOP
 ////////////////////////*/
 
-.top {
-    height: fit-content;
-    background-image: url("/images/data-center.webp");
-    background-attachment: fixed;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-}
 .logo {
     z-index: 2;
     position: fixed;
@@ -45,13 +37,7 @@ TOP
         width: 120px;
     }
 }
-/* .burger {
-    z-index: 2;
-    height: 50px;
-    position: fixed;
-    top: 24px;
-    right: 16px;
-} */
+
 .links {
     position: fixed;
     right: 0;
@@ -90,17 +76,40 @@ TOP
 HALL
 ////////////////////////*/
 
+.top {
+    height: fit-content;
+    background-image: url("/images/data-center.webp");
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
 .hall {
-    height: 100vh;
+    height: 120vh;
+}
+.hall-intro {
+    position: absolute;
+    top: 40vh;
+    left: 10vw;
+    font-weight: 900;
+    font-size: 2em;
+    color: white;
+    translate: 0 20px;
+    transition: translate 1s ease-out;
+}
+
+@media (min-width: 480px) and (max-width: 979px) {
     .hall-intro {
-        position: absolute;
-        top: 40vh;
-        left: 5vw;
-        font-weight: 900;
-        font-size: 2em;
-        color: white;
-        translate: 0 20px;
-        transition: translate 1s ease-out;
+        top: 50vh;
+        font-size: 3em;
+    }
+}
+
+@media (min-width: 979px) {
+    .hall-intro {
+        top: 50vh;
+        font-size: 4em;
     }
 }
 
@@ -121,9 +130,9 @@ ABOUT
     width: 90%;
     height: 100vh;
     .about-right {
-        padding: 1em 5em 1em 1em;
+        padding: 1em;
         margin-bottom: 3rem;
-        background-color: rgb(255, 255, 255, 0.2);
+        background-color: rgba(36, 36, 36, 0.6);
         h2 {
             margin: 1rem;
         }
@@ -132,59 +141,123 @@ ABOUT
         }
     }
     .about-left {
-        padding: 1em;
-        background-color: rgb(255, 255, 255, 0.2);
         margin-bottom: 3rem;
         .about-img {
-            width: 80%;
+            width: 100%;
             margin: auto;
             display: block;
         }
     }
 }
 
+@media (min-width: 480px) and (max-width: 979px) {
+    .about-right,
+    .about-left {
+        width: 60%;
+    }
+    .about-right {
+        margin-left: auto;
+    }
+}
+
+@media (min-width: 979px) {
+    .about-left {
+        width: 40%;
+    }
+    .about-right {
+        width: 60%;
+        margin-left: auto;
+    }
+    .about-title {
+        font-size: 3em;
+    }
+    .content {
+        font-size: 2em;
+    }
+}
 /*//////////////////////// 
 CAREER
 ////////////////////////*/
 
 .career {
     color: #fff;
-    .career-header {
-        display: flex;
-        h2 {
-            padding: 4rem 0 3rem;
-            transform: perspective(500px) rotateX(60deg) scaleY(2.5);
-            margin: auto;
-            font-size: 2.5rem;
-        }
+}
+.career-header {
+    text-align: center;
+    h2 {
+        padding: 4rem 0 3rem;
+        transform: perspective(500px) rotateX(60deg) scaleY(2.5);
+        font-size: 2.5rem;
+    }
+}
+.career-boxes {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+
+    width: 90%;
+    margin: auto;
+}
+.career-div {
+    display: flex;
+    flex-direction: column;
+}
+.career-title {
+    font-weight: 900;
+    font-size: 1.5em;
+    margin-bottom: 0.5rem;
+}
+.career-society {
+    color: #666;
+}
+.career-date {
+    color: #666;
+    font-size: 0.8em;
+}
+
+.career-img {
+    width: 80%;
+    margin: auto;
+}
+
+.career-odd,
+.career-even {
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    margin-bottom: 2rem;
+    padding: 2rem;
+    box-shadow: 0px 0px 10px #fff;
+    border-radius: 2rem;
+}
+
+@media (min-width: 480px) and (max-width: 979px) {
+    .career-even,
+    .career-odd {
+        flex-direction: row;
+    }
+    .career-div,
+    .career-img {
+        width: 50%;
+    }
+}
+@media (min-width: 979px) {
+    .career-even,
+    .career-odd {
+        width: 90%;
+        height: 100%;
+    }
+    .career-even {
+        flex-direction: row-reverse;
+    }
+    .career-odd {
+        flex-direction: row;
     }
     .career-div {
-        margin: auto;
-        display: flex;
-        flex-direction: column;
-        width: 80%;
-        padding: 1rem;
-        margin-bottom: 2rem;
-        box-shadow: 0px 0px 10px #fff;
-        border-radius: 2rem;
+        width: 50%;
     }
-    .career-title {
-        font-weight: 900;
-        font-size: 1.5em;
-        margin-bottom: 0.5rem;
-    }
-    .career-society {
-        color: #666;
-    }
-    .career-date {
-        color: #666;
-        font-size: 0.8em;
-    }
-
     .career-img {
-        height: 200px;
-        margin: auto;
-        margin-bottom: 2rem;
+        width: 40%;
     }
 }
 
@@ -195,62 +268,81 @@ EXPERIENCE
 .experience {
     color: #fff;
     padding-bottom: 1em;
-    .experience-header {
-        display: flex;
-        height: 10rem;
-        h2 {
-            padding: 4rem 0 3rem;
-            transform: perspective(500px) rotateX(60deg) scaleY(2.5);
-            color: #fff;
-            margin: auto;
-            font-size: 2.5rem;
-        }
+    text-align: center;
+    h3 {
+        text-transform: uppercase;
+        margin: 2rem;
+        font-size: 2rem;
     }
-    .experience-container {
-        width: 90%;
-        margin: auto;
-        display: flex;
-        flex-direction: column;
-        margin-bottom: 2rem;
-        box-shadow: 0px 0px 10px #fff;
-        border-radius: 2rem;
-        h2 {
-            font-size: 3rem;
-            margin: 3rem auto 1rem;
-            text-shadow: 0px 0px 5px lightblue;
-        }
+}
+.experience-header {
+    text-align: center;
+    height: 10rem;
+    h2 {
+        padding: 4rem 0 3rem;
+        transform: perspective(500px) rotateX(60deg) scaleY(2.5);
+        color: #fff;
+        font-size: 2.5rem;
     }
+}
+.experience-container {
+    text-align: center;
+    margin: auto;
+    width: 90%;
+    margin-bottom: 2rem;
+    box-shadow: 0px 0px 10px #fff;
+    border-radius: 2rem;
+    h2 {
+        font-size: 3rem;
+        margin: 3rem auto 1rem;
+        text-shadow: 0px 0px 5px lightblue;
+    }
+}
 
-    .experience-card {
-        display: flex;
-        flex-direction: column;
-        margin: 1rem;
-        h3 {
-            text-transform: uppercase;
-            margin: 2rem 0.5rem;
-            font-size: 2rem;
-        }
+.experience-box {
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
 
-        h4 {
-            font-size: 1.5rem;
-        }
-        p {
-            margin: 1rem 0;
-        }
-        img {
-            width: 60px;
-            margin: 1rem auto 2rem;
-        }
-        .icon-group {
-            display: flex;
-        }
+.experience-card {
+    display: flex;
+    flex-direction: column;
+    margin: 1rem;
+
+    h4 {
+        font-size: 1.5rem;
     }
-    .experience-card::after {
-        margin: 1rem auto;
-        content: "";
-        width: 40px;
-        height: 0;
-        border: 5px solid lightblue;
+    p {
+        margin: 1rem 0;
+    }
+    img {
+        width: 60px;
+        margin: 1rem auto 2rem;
+    }
+    .icon-group {
+        display: flex;
+    }
+}
+.experience-card::after {
+    margin: 1rem auto;
+    content: "";
+    width: 40px;
+    height: 0;
+    border: 5px solid lightblue;
+}
+
+@media (min-width: 480px) {
+    .experience-box {
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+    .hard .experience-card {
+        width: 40%;
+    }
+    .soft .experience-card {
+        width: 75%;
     }
 }
 

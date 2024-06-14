@@ -1,10 +1,33 @@
-document.querySelector(".burger").addEventListener("click", () => {
+const burger = document.querySelector(".burger");
+
+burger.addEventListener("click", () => {
     document.querySelector(".links").classList.toggle("display");
 });
 
-// document.getElementById("about").addEventListener("click", () => {
-//     document.querySelector(".about").scrollIntoView({ behavior: "smooth" });
-// });
+burger.addEventListener("mouseover", () => {
+    burger.classList.remove("shrink");
+});
+
+burger.addEventListener("mouseout", () => {
+    burger.classList.add("shrink");
+});
+
+const logo = document.getElementById("logo");
+
+logo.addEventListener("click", () => {
+    window.scrollTo({
+        top: 0,
+        behavior: "smooth",
+    });
+});
+
+logo.addEventListener("mouseover", () => {
+    logo.classList.remove("shrink");
+});
+
+logo.addEventListener("mouseout", () => {
+    logo.classList.add("shrink");
+});
 
 document.getElementById("about").addEventListener("click", () => {
     const elementPosition = document
