@@ -41,7 +41,7 @@ TOP
 .links {
     position: fixed;
     right: 0;
-    top: -320px;
+    top: -400px;
     display: flex;
     flex-direction: column;
     transform: translateY(0);
@@ -64,7 +64,7 @@ TOP
     }
 }
 .display {
-    transform: translateY(320px);
+    transform: translateY(400px);
 }
 
 .shrink {
@@ -184,10 +184,11 @@ CAREER
 }
 .career-header {
     text-align: center;
+    margin-bottom: 2rem;
     h2 {
         padding: 4rem 0 3rem;
-        transform: perspective(500px) rotateX(60deg) scaleY(2.5);
-        font-size: 2.5rem;
+        transform: perspective(500px) rotateX(40deg) scaleY(2);
+        font-size: 3em;
     }
 }
 .career-boxes {
@@ -240,6 +241,9 @@ CAREER
     .career-img {
         width: 50%;
     }
+    .career-header h2 {
+        font-size: 4em;
+    }
 }
 @media (min-width: 979px) {
     .career-even,
@@ -259,6 +263,9 @@ CAREER
     .career-img {
         width: 40%;
     }
+    .career-header h2 {
+        font-size: 4em;
+    }
 }
 
 /*//////////////////////// 
@@ -277,12 +284,11 @@ EXPERIENCE
 }
 .experience-header {
     text-align: center;
-    height: 10rem;
+    margin-bottom: 2rem;
     h2 {
         padding: 4rem 0 3rem;
-        transform: perspective(500px) rotateX(60deg) scaleY(2.5);
-        color: #fff;
-        font-size: 2.5rem;
+        transform: perspective(500px) rotateX(40deg) scaleY(2);
+        font-size: 3em;
     }
 }
 .experience-container {
@@ -343,6 +349,9 @@ EXPERIENCE
     }
     .soft .experience-card {
         width: 75%;
+    }
+    .experience-header h2 {
+        font-size: 4em;
     }
 }
 
