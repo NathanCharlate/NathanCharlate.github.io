@@ -62,7 +62,6 @@ navbar.forEach((element) => {
         element.classList.remove("shrink");
     });
     element.addEventListener("mouseout", () => {
-        console.log(topSectionPosition.bottom - window.scrollY);
         if (topSectionPosition.bottom - window.scrollY <= 0) {
             element.classList.add("shrink");
         }
@@ -83,7 +82,7 @@ window.addEventListener("scroll", () => {
     });
 });
 
-document.addEventListener("DOMContentLoaded", (event) => {
+document.addEventListener("DOMContentLoaded", () => {
     const content = {
         fr: {
             burger: {
@@ -100,7 +99,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
             career: {
                 title: "Mon Parcours",
                 boxes: {
-                    ortho: {
+                    technician: {
                         title: "Technicien d'atelier en orthèse-prothèse",
                         society: "Fondation Hopale",
                         content: "Ce que j'ai appris à Hopale...",
@@ -117,89 +116,90 @@ document.addEventListener("DOMContentLoaded", (event) => {
                 hard: {
                     ortho: {
                         title: "Orthopédie Technique",
-                        skills: {
-                            1: {
+                        skills: [
+                            {
                                 title: "Fabricaction de prothèses et orthèses",
                                 content:
-                                    "Expertise dans la fabrication personnalisée d'appareils orthopédiques avec des compétences soudure, thermoformage, résines époxy...",
+                                    "Expertise DANS la fabrication personnalisée d'appareils orthopédiques avec des compétences soudure, thermoformage, résines époxy...",
                             },
-                            2: {
+                            {
                                 title: "Modélisation et Impression 3D",
                                 content:
-                                    "Spécialisé dans les techniques de conception et d'impression 3D, notamment pour les applications médicales.",
+                                    "Spécialisé DANS les techniques de conception et d'impression 3D, notamment pour les applications médicales.",
                             },
-                        },
+                        ],
                     },
                     dev: {
                         title: "Développement Web",
-                        skills: {
-                            1: {
+                        skills: [
+                            {
                                 title: "front-end",
                                 content:
-                                    "Création de sites web réactifs utilisant des standards modernes du web, ainsi que d'applications web dynamiques avec React et TypeScript, intégrant Redux pour la gestion d'état.",
+                                    "Création DE sites web réactifs utilisant des standards modernes du web, ainsi que d'applications web dynamiques avec React et TypeScript, intégrant Redux pour la gestion d'état.",
                             },
-                            2: {
+                            {
                                 title: "back-end",
                                 content:
-                                    "Développement de solutions back-end robustes avec une expertise en PHP et Laravel. Conception et optimisation de bases de données avec SQL et MariaDB pour une intégration efficace dans des projets web.",
+                                    "Développement DE solutions back-end robustes avec une expertise en PHP et Laravel. Conception et optimisation de bases de données avec SQL et MariaDB pour une intégration efficace dans des projets web.",
                             },
-                        },
+                        ],
                     },
                 },
                 soft: {
                     teamwork: {
                         title: "Travail d'Équipe",
-                        skills: {
-                            1: {
+                        skills: [
+                            {
                                 title: "Collaboration Multidisciplinaire",
                                 content:
-                                    "Expérience dans la collaboration avec divers professionnels de santé, favorisant un environnement de travail productif et harmonieux.",
+                                    "Expérience DANS la collaboration avec divers professionnels de santé, favorisant un environnement de travail productif et harmonieux.",
                             },
-                        },
+                        ],
                     },
                     self: {
                         title: "Compétences Interpersonnelles",
-                        skills: {
-                            1: {
+                        skills: [
+                            {
                                 title: "Communication et Empathie",
                                 content:
-                                    "Aptitude à comprendre et répondre aux besoins des clients et des collègues, essentielle dans les soins de santé et le développement de projets.",
+                                    "Aptitude à comprendre ET répondre aux besoins des clients et des collègues, essentielle dans les soins de santé et le développement de projets.",
                             },
-                        },
+                        ],
                     },
                     adapt: {
                         title: "Adaptabilité",
-                        skills: {
-                            1: {
+                        skills: [
+                            {
                                 title: "Flexibilité Professionnelle",
                                 content:
-                                    "Capacité à s'adapter rapidement à de nouvelles technologies et environnements de travail, du soin des patients à la technologie web.",
+                                    "Capacité à s'adapter rapidement à DE nouvelles technologies et environnements de travail, du soin des patients à la technologie web.",
                             },
-                        },
+                        ],
                     },
                     creative: {
                         title: "Compétences Créatives",
-                        skills: {
-                            1: {
+                        skills: [
+                            {
                                 title: "Musique",
                                 content:
-                                    "Habileté en piano, guitare et batterie, enrichissant la créativité et la capacité à apprendre de nouveaux skills.",
+                                    "Habileté EN piano, guitare et batterie, enrichissant la créativité et la capacité à apprendre de nouveaux skills.",
                             },
-                        },
+                        ],
                     },
                     problems: {
                         title: "Résolution de Problèmes",
-                        skills: {
-                            1: {
+                        skills: [
+                            {
                                 title: "Mécanique Auto et Moto",
                                 content:
-                                    "Passion pour la mécanique, démontrant une forte capacité à résoudre des problèmes complexes et à entretenir des systèmes mécaniques.",
+                                    "Passion POUR la mécanique, démontrant une forte capacité à résoudre des problèmes complexes et à entretenir des systèmes mécaniques.",
                             },
-                        },
+                        ],
                     },
                 },
             },
             contact: "Me contacter",
+            footer: "© 2024 Nathan Charlaté. Tous droits réservés.",
         },
     };
 
@@ -208,6 +208,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
     document.getElementById("change-lang").addEventListener("click", () => {
         currentLang = currentLang === "fr" ? "en" : "fr";
         contentLang = content[currentLang];
+
         document.getElementById("about").innerText = contentLang.burger.about;
         document.getElementById("career").innerText = contentLang.burger.career;
         document.getElementById("experience").innerText =
@@ -227,5 +228,46 @@ document.addEventListener("DOMContentLoaded", (event) => {
             document.querySelector(`#${id} h4`).innerText = box.society;
             document.querySelector(`#${id} .content`).innerText = box.content;
         }
+        document.querySelector(".experience-header h2").innerText =
+            contentLang.experience.title;
+
+        const hards = document.querySelectorAll('[data-section="hard"]');
+        for (const section of hards) {
+            document.querySelector(`#${section.id} h3`).innerText =
+                contentLang.experience.hard[section.id].title;
+            console.log(document.querySelector(`#${section.id} h3`));
+            console.log(contentLang.experience.hard[section.id].title);
+            for (const [key, skill] of Object.entries(
+                contentLang.experience.hard[section.id].skills
+            )) {
+                const titles = document.querySelectorAll(
+                    `#${section.id} .experience-card h4`
+                );
+                const contents = document.querySelectorAll(
+                    `#${section.id} .experience-card p`
+                );
+                titles[key].innerText = skill.title;
+                contents[key].innerText = skill.content;
+            }
+        }
+        const softs = document.querySelectorAll('[data-section="soft"]');
+        for (const section of softs) {
+            document.querySelector(`#${section.id} h3`).innerText =
+                contentLang.experience.soft[section.id].title;
+            for (const [key, skill] of Object.entries(
+                contentLang.experience.soft[section.id].skills
+            )) {
+                const titles = document.querySelectorAll(
+                    `#${section.id} .experience-card h4`
+                );
+                const contents = document.querySelectorAll(
+                    `#${section.id} .experience-card p`
+                );
+                titles[key].innerText = skill.title;
+                contents[key].innerText = skill.content;
+            }
+        }
+        document.querySelector(".contact h2").innerText = contentLang.contact;
+        document.querySelector("footer span").innerText = contentLang.footer;
     });
 });

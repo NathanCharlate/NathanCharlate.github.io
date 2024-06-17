@@ -219,6 +219,7 @@ CAREER
 .career-img {
     width: 80%;
     margin: auto;
+    z-index: 2;
 }
 
 .career-odd,
