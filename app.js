@@ -6,6 +6,7 @@ document.getElementById("about").addEventListener("click", () => {
         top: elementPosition + window.scrollY - 140,
         behavior: "smooth",
     });
+    document.querySelector(".links").classList.remove("display");
 });
 
 document.getElementById("career").addEventListener("click", () => {
@@ -16,6 +17,7 @@ document.getElementById("career").addEventListener("click", () => {
         top: elementPosition + window.scrollY,
         behavior: "smooth",
     });
+    document.querySelector(".links").classList.remove("display");
 });
 
 document.getElementById("experience").addEventListener("click", () => {
@@ -26,6 +28,7 @@ document.getElementById("experience").addEventListener("click", () => {
         top: elementPosition + window.scrollY,
         behavior: "smooth",
     });
+    document.querySelector(".links").classList.remove("display");
 });
 
 document.getElementById("contact").addEventListener("click", () => {
@@ -36,6 +39,7 @@ document.getElementById("contact").addEventListener("click", () => {
         top: elementPosition + window.scrollY,
         behavior: "smooth",
     });
+    document.querySelector(".links").classList.remove("display");
 });
 
 const burger = document.querySelector(".burger");
@@ -46,6 +50,7 @@ logo.addEventListener("click", () => {
         top: 0,
         behavior: "smooth",
     });
+    document.querySelector(".links").classList.remove("display");
 });
 
 burger.addEventListener("click", () => {
@@ -82,6 +87,13 @@ window.addEventListener("scroll", () => {
     });
 });
 
+window.addEventListener("scroll", function () {
+    const scrolled = window.scrollY;
+    document.querySelector(
+        ".parallax-background"
+    ).style.transform = `translateY(${scrolled * 0.8}px)`;
+});
+
 document.addEventListener("DOMContentLoaded", () => {
     const content = {
         fr: {
@@ -95,7 +107,7 @@ document.addEventListener("DOMContentLoaded", () => {
             about: {
                 title: "Bienvenue sur mon site !",
                 content:
-                    "Je m'appelle Nathan Charlaté, et je suis un développeur web fullstack junior. Formé originellement comme technicien d'atelier en orthopédie, j'ai un profond attrait pour la précision et l'innovation, qualités que j'applique désormais dans le développement de solutions web créatives et efficaces. Polyvalent, je maîtrise aussi bien les technologies modernes de programmation que les techniques de modélisation et d'impression 3D. Ma carrière m'a permis de développer une forte capacité à résoudre des problèmes complexes et a gérer de nombreux problèmes différents, que ce soit en appareillant des amputés de la conception à la fabrication, ou en travaillant en mecanique automobile. Musicien à mes heures perdu, je joue du piano, de la guitare et de la batterie, ce qui nourrit ma créativité et renforce mon esprit d'équipe.",
+                    "Je m'appelle Nathan Charlaté, et je suis un développeur web fullstack junior. Formé originellement comme technicien d'atelier en orthopédie, j'ai un profond attrait pour la précision et l'innovation, qualités que j'applique désormais dans le développement de solutions web créatives et efficaces. Polyvalent, je maîtrise aussi bien les technologies modernes de programmation que les techniques de modélisation et d'impression 3D. Ma carrière m'a permis de développer une forte capacité à résoudre et à gérer de nombreux problèmes différents, que ce soit en appareillant des amputés de la conception à la fabrication, ou en travaillant en mecanique automobile. Musicien à mes heures perdu, je joue du piano, de la guitare et de la batterie, ce qui nourrit ma créativité et renforce mon esprit d'équipe.",
             },
             career: {
                 title: "Mon Parcours",
@@ -123,7 +135,7 @@ document.addEventListener("DOMContentLoaded", () => {
                             {
                                 title: "Fabricaction de prothèses et orthèses",
                                 content:
-                                    "Expertise dans la fabrication personnalisée d'appareils orthopédiques avec des compétences soudure, thermoformage, résines époxy...",
+                                    "Expertise dans la fabrication personnalisée d'appareils orthopédiques avec des compétences en soudure, thermoformage, résines époxy...",
                             },
                             {
                                 title: "Modélisation et Impression 3D",
@@ -215,7 +227,7 @@ document.addEventListener("DOMContentLoaded", () => {
             about: {
                 title: "Welcome to my site!",
                 content:
-                    "My name is Nathan Charlaté, and I am a junior full-stack web developer. Originally trained as an orthopedic workshop technician, I have a deep attraction for precision and innovation, qualities that I now apply in the development of creative and effective web solutions. Versatile, I am proficient in both modern programming technologies and 3D modeling and printing techniques. My career has allowed me to develop a strong ability to solve complex problems and manage many different issues, whether in fitting amputees from design to manufacture, or working in automotive mechanics. A musician in my spare time, I play piano, guitar, and drums, which nourishes my creativity and strengthens my team spirit.",
+                    "My name is Nathan Charlaté, and I am a junior full-stack web developer. Originally trained as an orthopedic workshop technician, I have a deep attraction for precision and innovation, qualities that I now apply in the development of creative and effective web solutions. Versatile, I am proficient in both modern programming technologies and 3D modeling and printing techniques. My career has allowed me to develop a strong ability to solve and manage many different issues, whether in fitting amputees from design to manufacture, or working in automotive mechanics. A musician in my spare time, I play piano, guitar, and drums, which nourishes my creativity and strengthens my team spirit.",
             },
             career: {
                 title: "My Path",

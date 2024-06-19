@@ -43,6 +43,7 @@ TOP
 }
 
 .links {
+    z-index: 2;
     position: fixed;
     right: 0;
     top: -400px;
@@ -80,25 +81,49 @@ TOP
 HALL
 ////////////////////////*/
 
+.parallax {
+    position: relative;
+    overflow: hidden;
+    height: fit-content;
+}
+
+.parallax-background {
+    height: 150vh;
+    position: absolute;
+    top: -10%;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url("/images/data-center.webp");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
 .top {
+    position: relative;
+}
+
+/* .top {
     height: max-content;
     background-image: url("/images/data-center.webp");
     background-attachment: fixed;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-}
+} */
 
 .hall {
     height: 120vh;
 }
 .hall-intro {
     position: absolute;
-    top: 40vh;
+    top: 50vh;
     left: 10vw;
     font-weight: 900;
     font-size: 2em;
     color: white;
+    text-shadow: 2px 2px 10px black;
     translate: 0 20px;
     transition: translate 1s ease-out;
 }
@@ -142,6 +167,7 @@ ABOUT
     .about-left {
         margin-bottom: 3rem;
         .about-img {
+            z-index: 1;
             width: 100%;
             margin: auto;
             display: block;
@@ -222,7 +248,7 @@ CAREER
 .career-img {
     width: 80%;
     margin: auto;
-    z-index: 2;
+    z-index: 1;
 }
 
 .career-odd,
