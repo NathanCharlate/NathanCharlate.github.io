@@ -214,6 +214,7 @@ CAREER
         padding: 4rem 0 3rem;
         transform: perspective(500px) rotateX(40deg) scaleY(2);
         font-size: 3em;
+        text-transform: uppercase;
     }
 }
 .career-boxes {
@@ -323,6 +324,7 @@ EXPERIENCE
         padding: 4rem 0 3rem;
         transform: perspective(500px) rotateX(40deg) scaleY(2);
         font-size: 3em;
+        text-transform: uppercase;
     }
 }
 .experience-container {
@@ -353,6 +355,7 @@ EXPERIENCE
 
     h4 {
         font-size: 1.5rem;
+        text-transform: uppercase;
     }
     p {
         margin: 1rem 0;
