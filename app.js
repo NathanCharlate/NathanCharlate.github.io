@@ -91,7 +91,7 @@ window.addEventListener("scroll", function () {
     const scrolled = window.scrollY;
     document.querySelector(
         ".parallax-background"
-    ).style.transform = `translateY(${scrolled * 0.8}px)`;
+    ).style.transform = `translateY(${scrolled * 1}px)`;
 });
 
 document.addEventListener("DOMContentLoaded", () => {
