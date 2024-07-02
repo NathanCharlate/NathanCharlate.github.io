@@ -126,6 +126,9 @@ document.addEventListener("DOMContentLoaded", () => {
                     },
                 },
             },
+            portfolio: {
+                title: "Mon Portfolio",
+            },
             experience: {
                 title: "mes compétences",
                 hard: {
@@ -246,6 +249,9 @@ document.addEventListener("DOMContentLoaded", () => {
                     },
                 },
             },
+            portfolio: {
+                title: "My Portfolio",
+            },
             experience: {
                 title: "My Skills",
                 hard: {
@@ -364,6 +370,10 @@ document.addEventListener("DOMContentLoaded", () => {
             document.querySelector(`#${id} .career-desc`).innerText =
                 box.content;
         }
+
+        document.querySelector(".portfolio-header h2").innerText =
+            contentLang.portfolio.title;
+
         document.querySelector(".experience-header h2").innerText =
             contentLang.experience.title;
 
